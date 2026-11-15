@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Años - Memoria, Verdad y Justicia</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #6f42e2;
+            --blue: #0b5ed7;
+            --green: #198754;
+            --orange: #fd7e14;
+            --indigo: #6610f2;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+        }
+        /* Navbar */
+        .navbar-custom {
+            border-bottom: 2px solid var(--purple);
+        }
+        /* Hero */
+        .hero-section {
+            background: linear-gradient(to bottom, #e6f0fa, #ffffff);
+            border-bottom: 1px solid #dee2e6;
+        }
+        .btn-primary-custom {
+            background-color: var(--blue);
+            border-color: var(--blue);
+        }
+        .btn-primary-custom:hover {
+            background-color: #0a4cb8;
+            border-color: #0a4cb8;
+        }
+        /* Línea de tiempo */
+        .timeline-section {
+            border: 2px solid var(--green);
+            border-radius: 0.5rem;
+            background-color: #f8fffa;
+        }
+        .timeline-item h5 {
+            color: var(--green);
+        }
+        /* Testimonios */
+        .testimonials-section {
+            border: 2px solid var(--orange);
+            border-radius: 0.5rem;
+            background-color: #fff9ea;
+        }
+        .testimonio-card {
+            border-left: 4px solid var(--orange);
+            background-color: #fff;
+            border-radius: 0.3rem;
+        }
+        /* Bloques inferior */
+        .block-card {
+            background-color: #f0f4ff;
+            border-radius: 0.5rem;
+        }
+        .tarjeta-vista {
+            background: linear-gradient(135deg, #e0edff, #d4e7ff);
+            border-radius: 0.5rem;
+            font-style: italic;
+            color: #1e3a5f;
+        }
+        /* Footer */
+        .footer-custom {
+            background-color: #f3e8ff;
+            border-top: 2px solid var(--purple);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-custom py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">🕊️ Memoria Activa</a>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link" href="#tiempo">Línea de tiempo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sumate">Sumate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero / Encabezado Principal -->
+    <section class="hero-section py-5 text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold text-dark mb-2">50 años. Memoria, Verdad y Justicia</h1>
+            <p class="fs-5 text-primary mb-2">24 de marzo de 1976 — 2026</p>
+            <p class="text-muted mb-4">Han pasado 50 años desde el 24 de marzo de 1976.</p>
+            <button class="btn btn-primary-custom text-white px-5 py-2" onclick="scrollToSection('sumate')">Sumate a la causa</button>
+        </div>
+    </section>
+
+    <!-- 3. Línea de Tiempo -->
+    <section id="tiempo" class="container py-4">
+        <div class="timeline-section p-4">
+            <div class="row g-4 text-center">
+                <div class="col-md col-sm-6 timeline-item">
+                    <span class="fs-2">📅</span>
+                    <h5 class="fw-bold">1976</h5>
+                    <p class="small">Golpe de Estado cívico-militar en Argentina. Comienza el período de terrorismo de Estado.</p>
+                </div>
+                <div class="col-md col-sm-6 timeline-item">
+                    <span class="fs-2">👥</span>
+                    <h5 class="fw-bold">1983 CONADEP</h5>
+                    <p class="small">Se crea la Comisión Nacional sobre la Desaparición de Personas. Informe "Nunca Más".</p>
+                </div>
+                <div class="col-md col-sm-6 timeline-item">
+                    <span class="fs-2">⚖️</span>
+                    <h5 class="fw-bold">1985 Juicio a las Juntas</h5>
+                    <p class="small">Se juzga y condena a los responsables de la última dictadura militar.</p>
+                </div>
+                <div class="col-md col-sm-6 timeline-item">
+                    <span class="fs-2">⚖️</span>
+                    <h5 class="fw-bold">2003 Anulación de leyes</h5>
+                    <p class="small">Se anulan las leyes de Obediencia Debida y Punto Final, reabriendo los juicios.</p>
+                </div>
+                <div class="col-md col-sm-6 timeline-item">
+                    <span class="fs-2">👥</span>
+                    <h5 class="fw-bold">Hoy Juicios en curso</h5>
+                    <p class="small">Continúan los juicios por delitos de lesa humanidad en todo el país.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Buscador y Testimonios -->
+    <section id="testimonios" class="container py-4">
+        <div class="testimonials-section p-4">
+            <input type="text" id="buscador" class="form-control mb-4" placeholder="Buscar en los testimonios..." oninput="filtrarTestimonios()">
+            <div class="row g-4" id="contenedor-testimonios">
+                <div class="col-md-4 testimonio-card p-3">
+                    <p class="fst-italic">"La memoria no es solo recordar el pasado,<br>es construir un compromiso con el futuro."</p>
+                    <span class="text-muted small">— Testimonio 1</span>
+                </div>
+                <div class="col-md-4 testimonio-card p-3">
+                    <p class="fst-italic">"Nunca más el silencio frente al horror.<br>La verdad siempre encuentra su camino."</p>
+                    <span class="text-muted small">— Testimonio 2</span>
+                </div>
+                <div class="col-md-4 testimonio-card p-3">
+                    <p class="fst-italic">"Recordamos para que nunca más se repita.<br>Memoria, Verdad y Justicia."</p>
+                    <span class="text-muted small">— Testimonio 3</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 y 6. Formulario y Generador de Tarjeta -->
+    <section id="sumate" class="container py-4">
+        <div class="row g-4">
+            <!-- Formulario de Adhesión -->
+            <div class="col-md-6">
+                <div class="block-card p-4 h-100">
+                    <h4 class="mb-3">👤 Formulario de adhesión</h4>
+                    <input type="text" id="nombre" class="form-control mb-3" placeholder="Tu nombre completo">
+                    <button class="btn btn-primary-custom text-white w-100 mb-3" onclick="enviarFormulario()">Sumarme a la causa</button>
+                    <div id="mensaje-exito" class="alert alert-success py-2 d-none">✅ ¡Gracias por tu adhesión!</div>
+                    <div id="mensaje-error" class="alert alert-danger py-2 d-none">⚠️ Ocurrió un error. Intentá nuevamente.</div>
+                </div>
+            </div>
+
+            <!-- Generador de Tarjeta -->
+            <div class="col-md-6">
+                <div class="block-card p-4 h-100">
+                    <h4 class="mb-3">🖼️ Generador de tarjeta</h4>
+                    <input type="text" id="frase-tarjeta" class="form-control mb-3" placeholder="Escribí una frase por la memoria...">
+                    <button class="btn btn-primary-custom text-white w-100 mb-4" onclick="generarTarjeta()">Generar tarjeta</button>
+                    
+                    <div>
+                        <h6 class="fw-bold">Vista previa</h6>
+                        <div class="tarjeta-vista p-4 text-center mt-2">
+                            <p id="texto-tarjeta" class="mb-1">Nunca más el silencio.<br>Memoria, Verdad y Justicia.<br><em>Siempre.</em></p>
+                            <span class="small">🎗️ — Memoria Activa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer class="footer-custom py-3 mt-4">
+        <p class="text-center mb-0">🤍 Nunca Más — Memoria, Verdad y Justicia</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS + Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Desplazamiento suave
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Filtrar testimonios
+        function filtrarTestimonios() {
+            const busqueda = document.getElementById('buscador').value.toLowerCase();
+            const tarjetas = document.querySelectorAll('.testimonio-card');
+            tarjetas.forEach(t => {
+                t.style.display = t.textContent.toLowerCase().includes(busqueda) ? 'block' : 'none';
+            });
+        }
+
+        // Enviar formulario
+        function enviarFormulario() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const exito = document.getElementById('mensaje-exito');
+            const error = document.getElementById('mensaje-error');
+            exito.classList.add('d-none');
+            error.classList.add('d-none');
+            
+            if (nombre === '') {
+                error.classList.remove('d-none');
+            } else {
+                exito.classList.remove('d-none');
+                document.getElementById('nombre').value = '';
+                setTimeout(() => exito.classList.add('d-none'), 4000);
+            }
+        }
+
+        // Generar tarjeta
+        function generarTarjeta() {
+            const frase = document.getElementById('frase-tarjeta').value.trim();
+            const texto = document.getElementById('texto-tarjeta');
+            texto.innerHTML = frase === '' 
+                ? 'Nunca más el silencio.<br>Memoria, Verdad y Justicia.<br><em>Siempre.</em>'
+                : frase + '<br><br>— Memoria Activa';
+        }
+    </script>
+</body>
+</html>
